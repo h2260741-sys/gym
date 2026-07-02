@@ -1,0 +1,285 @@
+:root {
+  --primary-bg: #f5f7fa;
+  --secondary-bg: #eef2f7;
+  --accent-color: #1e3a8a;
+  --text-muted: #6b7280;
+  --text-light: #1f2937;
+  --danger-color: #dc2626;
+  --hover-bg: rgba(30, 58, 138, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Details-parent {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  background: transparent;
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+.Total-Accounts-Parent {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.EXpire-Within-3Days,
+.Account-Expire {
+  flex: 1;
+  padding: 16px;
+  background: rgba(30, 58, 138, 0.06);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 6px;
+  color: var(--text-light);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.Account-Expire {
+  border-left-color: var(--accent-color);
+  background: rgba(30, 58, 138, 0.06);
+}
+
+.Details-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: auto;
+  font-size: 12px;
+  max-width: 100%;
+}
+
+.Details-thead {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.Details-tr {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.Details-tr:hover {
+  background: rgba(30, 58, 138, 0.04);
+}
+
+.Details-thead .Details-tr:hover {
+  background: transparent;
+}
+
+.Details-tr td {
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 12px;
+  color: var(--text-light);
+  border-right: 1px solid rgba(6, 182, 212, 0.05);
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Details-tr td:last-child {
+  border-right: none;
+}
+
+.Details-thead td {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.Details-tbody td i {
+  font-size: 16px;
+  color: var(--accent-color);
+}
+
+
+@media (min-width: 1024px) {
+  .Details-parent {
+    gap: 24px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 16px;
+    flex-direction: row;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 16px;
+    font-size: 13px;
+    flex: 1;
+  }
+
+  .Details-table {
+    font-size: 12px;
+  }
+
+  .Details-tr td {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .Details-thead td {
+    font-size: 12px;
+    padding: 12px 10px;
+  }
+}
+
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .Details-parent {
+    gap: 18px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 12px;
+    flex-direction: row;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .Details-table {
+    font-size: 11px;
+  }
+
+  .Details-tr td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .Details-thead td {
+    font-size: 11px;
+    padding: 10px 8px;
+  }
+
+  .Details-tbody td i {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .Details-parent {
+    gap: 14px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 12px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .Details-table {
+    font-size: 10px;
+    border-radius: 6px;
+  }
+
+  .Details-tr td {
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  .Details-thead td {
+    font-size: 10px;
+    padding: 8px 6px;
+  }
+
+  .Details-tbody td i {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 479px) {
+  .Details-parent {
+    gap: 12px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 10px;
+    font-size: 11px;
+    width: 100%;
+  }
+
+  .Details-table {
+    font-size: 9px;
+    border-radius: 4px;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .Details-table,
+  .Details-thead,
+  .Details-tbody,
+  .Details-tr,
+  .Details-tr td {
+    display: block;
+  }
+
+  .Details-tr {
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+  .Details-tr td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border: none;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .Details-tr td:last-child {
+    border-bottom: none;
+  }
+
+  .Details-tr td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-right: 8px;
+  }
+
+  .Details-thead {
+    display: none;
+  }
+
+  .Details-tbody td i {
+    font-size: 11px;
+  }
+}

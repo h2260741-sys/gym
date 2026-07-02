@@ -1,0 +1,126 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f0f4f8 0%, #f5f7fa 100%);
+}
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  gap: 0;
+  margin-left: 280px;
+}
+
+.content-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #f0f4f8 0%, #faf8f3 100%);
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+@media (min-width: 490px) {
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .app-layout {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+  }
+
+  .content-container {
+    padding: 30px;
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+}
+@media (min-width: 1024px) {
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .app-layout {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+  }
+
+  .content-container {
+    padding: 30px;
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+}
+
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .app-layout {
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  .content-container {
+    width: 100%;
+    padding: 20px;
+    margin-top: 50px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .app-layout {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content-container {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    padding-top: 70px;
+    margin-top: 0;
+  }
+}
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

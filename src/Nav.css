@@ -1,0 +1,614 @@
+
+
+:root {
+
+  --primary-bg: #1a1f35;
+  --secondary-bg: #13171f;
+  --accent-color: #3b82f6;
+  --accent-light: #60a5fa;
+  --text-light: #f0f4f8;
+  --text-muted: #8b95a5;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --success-color: #10b981;
+  --hover-bg: rgba(59, 130, 246, 0.08);
+  --border-color: rgba(59, 130, 246, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.Sidebar-Wrapper {
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+
+.Hamburger-Menu {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 24px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.Hamburger-Menu i {
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.User-Nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  flex-shrink: 0;
+}
+
+.Logo-Parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+  border-radius: 50%;
+  
+}
+
+.Logo-Parent i {
+  font-size: 24px;
+  color: var(--text-light);
+}
+
+.User-Name {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+}
+
+.Parent {
+  flex: 1;
+  width: 100%;
+  background: transparent;
+  border-right: none;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  border-radius: 0;
+  overflow-y: auto;
+  position: relative;
+  top: auto;
+  left: auto;
+  flex-shrink: 0;
+  z-index: auto;
+}
+
+.Child {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Nav-Top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Nav-Top > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  
+}
+
+.Nav-Top > div:hover {
+  background: var(--hover-bg);
+  color: var(--accent-color);
+  transform: translateX(2px);
+}
+
+.Nav-Top > div:active {
+  transform: translateX(0);
+}
+
+
+.Dashboared-Parent.active,
+.View-Register-Parent.active,
+.Payment-History-Parent.active {
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--accent-color);
+  border: 0px solid var(--accent-color);
+  border-width: 1px 3px 1px 3px;
+  padding-left: 11px;
+  box-shadow: inset 0 0 12px rgba(6, 182, 212, 0.1);
+}
+
+.Dashboared-Parent,
+.View-Register-Parent,
+.Payment-History-Parent {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.Dashboared-Parent i,
+.View-Register-Parent i,
+.Payment-History-Parent i {
+  font-size: 18px;
+  color: var(--accent-color);
+  min-width: 20px;
+  text-align: center;
+}
+
+.Dashboard-Child,
+.view-register-child,
+.Payment-History-Child {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.Nav-Top > i {
+  font-size: 16px;
+  color: var(--accent-color);
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.Nav-Top > i:hover {
+  background: var(--hover-bg);
+  transform: translateX(2px);
+}
+
+.Nav-Bottom {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.Logout {
+  background: transparent;
+  border: 1.5px solid var(--danger-color);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--danger-color);
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.Logout:hover {
+  background: rgba(239, 68, 68, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.Logout:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+}
+
+@media (min-width: 1024px) {
+  .Sidebar-Wrapper {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+  }
+
+  .User-Nav {
+    padding: 13px;
+    gap: 12px;
+  }
+
+  .Logo-Parent {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .User-Name {
+    font-size: 13px;
+    display: block;
+  }
+
+  .Parent {
+    padding: 24px 16px;
+  }
+
+  .Nav-Top > div,
+  .Dashboared-Parent,
+  .View-Register-Parent,
+  .Payment-History-Parent {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .Dashboard-Child,
+  .view-register-child,
+  .Payment-History-Child {
+    font-size: 14px;
+    display: inline;
+  }
+
+  .Parent-2 {
+    display: none;
+  }
+}
+
+/* Tablet (768px to 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .Sidebar-Wrapper {
+    width: 240px;
+    position: fixed;
+    height: 100vh;
+  }
+
+  .Hamburger-Menu {
+    display: flex;
+  }
+
+  .User-Nav {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .Logo-Parent {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .User-Name {
+    font-size: 12px;
+    display: block;
+  }
+
+  .Parent {
+    padding: 18px 12px;
+    max-height: calc(100vh - 120px);
+  }
+
+  .Nav-Top > div,
+  .Dashboared-Parent,
+  .View-Register-Parent,
+  .Payment-History-Parent {
+    padding: 10px 12px;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .Dashboared-Parent i,
+  .View-Register-Parent i,
+  .Payment-History-Parent i {
+    font-size: 16px;
+    min-width: 18px;
+  }
+
+  .Dashboard-Child,
+  .view-register-child,
+  .Payment-History-Child {
+    font-size: 12px;
+    display: inline;
+  }
+
+  .Logout {
+    padding: 9px 12px;
+    font-size: 12px;
+    border-width: 1px;
+  }
+
+  .Parent-2 {
+    display: none;
+  }
+}
+
+/* Mobile Large (480px to 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .Sidebar-Wrapper {
+    width: 100%;
+    height: 50px;
+    max-height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    background: linear-gradient(90deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding-top: 0;
+    overflow: visible;
+  }
+
+  .Hamburger-Menu {
+    display: flex;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 1001;
+  }
+
+  .User-Nav {
+    padding: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+    display: none;
+    height: auto;
+  }
+
+  .User-Nav.mobile-open {
+    display: flex;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px;
+    gap: 12px;
+    height: auto;
+    z-index: 999;
+  }
+
+  .Logo-Parent {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .User-Name {
+    font-size: 11px;
+    display: none;
+  }
+
+  .Parent {
+    width: 100%;
+    padding: 12px 8px;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    background: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color);
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .Parent.mobile-open {
+    display: flex;
+  }
+
+  .Nav-Top > div,
+  .Dashboared-Parent,
+  .View-Register-Parent,
+  .Payment-History-Parent {
+    padding: 8px 10px;
+    gap: 8px;
+    font-size: 11px;
+    width: 100%;
+  }
+
+  .Dashboared-Parent i,
+  .View-Register-Parent i,
+  .Payment-History-Parent i {
+    font-size: 14px;
+    min-width: 16px;
+  }
+
+  .Dashboard-Child,
+  .view-register-child,
+  .Payment-History-Child {
+    font-size: 11px;
+    display: none; 
+  }
+
+  
+  .Parent.mobile-open .Dashboard-Child,
+  .Parent.mobile-open .view-register-child,
+  .Parent.mobile-open .Payment-History-Child {
+    display: inline-block;
+  }
+
+  .Logout {
+    padding: 7px 8px;
+    font-size: 10px;
+    border-width: 1px;
+  }
+
+  .Parent-2 {
+    display: none;
+  }
+}
+
+/* Mobile Small (Below 480px) */
+@media (max-width: 479px) {
+  .Sidebar-Wrapper {
+    width: 100%;
+    height: 50px;
+    max-height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    background: linear-gradient(90deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding-top: 0;
+    overflow: visible;
+  }
+
+  .Hamburger-Menu {
+    display: flex;
+    position: fixed;
+    top: 6px;
+    left: 6px;
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    z-index: 1001;
+  }
+
+  .User-Nav {
+    padding: 8px;
+    gap: 0;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    display: none;
+    height: auto;
+  }
+
+  .User-Nav.mobile-open {
+    display: flex;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px;
+    gap: 12px;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    z-index: 999;
+  }
+
+  .Logo-Parent {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .User-Name {
+    display: none;
+  }
+
+  .Parent {
+    width: 100%;
+    padding: 8px 4px;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    background: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color);
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .Parent.mobile-open {
+    display: flex;
+  }
+
+  .Parent-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 6px;
+  }
+
+  .Nav-Top > div,
+  .Dashboared-Parent,
+  .View-Register-Parent,
+  .Payment-History-Parent {
+    padding: 8px;
+    gap: 0;
+    font-size: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .Dashboared-Parent i,
+  .View-Register-Parent i,
+  .Payment-History-Parent i {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .Dashboard-Child,
+  .view-register-child,
+  .Payment-History-Child {
+    display: none; /* hide labels in compact mobile small view */
+  }
+
+  /* show labels when menu is expanded */
+  .Parent.mobile-open .Dashboard-Child,
+  .Parent.mobile-open .view-register-child,
+  .Parent.mobile-open .Payment-History-Child {
+    display: inline-block;
+  }
+
+  .Logout {
+    width: 100%;
+    padding: 8px 4px;
+    font-size: 10px;
+    border-width: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+

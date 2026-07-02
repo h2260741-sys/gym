@@ -1,0 +1,420 @@
+:root {
+  --primary-bg: #f5f7fa;
+  --secondary-bg: #eef2f7;
+  --accent-color: #1e3a8a;
+  --accent-light: #3b82f6;
+  --text-light: #1f2937;
+  --text-muted: #6b7280;
+  --danger-color: #dc2626;
+  --warning-color: #ea580c;
+  --success-color: #059669;
+  --hover-bg: rgba(30, 58, 138, 0.08);
+  --border-color: rgba(30, 58, 138, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Details-parent {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  background: transparent;
+  color: var(--text-light);
+}
+
+
+.Details-payments {
+  margin-top: 32px;
+}
+.Details-payments h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--accent-color);
+}  
+
+.New-Register-Parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 12px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.New-Register-Parent:hover {
+  background: rgba(59, 130, 246, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.New-Register-Parent i {
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+.New-register-child {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.Total-Accounts-Parent {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.EXpire-Within-3Days,
+.Account-Expire {
+  flex: 1;
+  padding: 16px;
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 6px;
+  color: var(--text-light);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.Account-Expire {
+  border-color: var(--danger-color);
+  border: 1px solid rgba(239, 68, 68, 0.08);
+
+  background: rgba(239, 68, 68, 0.08);
+}
+
+
+.Details-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.Details-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  table-layout: auto;
+  font-size: 12px;
+}
+
+.Details-thead td {
+  position: sticky;
+  top: 0;
+  background: #f9fafb; 
+  z-index: 1;
+}
+
+.Details-thead {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.12) 0%, rgba(59, 130, 246, 0.06) 100%);
+  border-bottom: 2px solid rgba(59, 130, 246, 0.15);
+}
+
+.Details-tr {
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.Details-tr:hover {
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.Details-thead .Details-tr:hover {
+  background: transparent;
+}
+
+.Details-tr td {
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 12px;
+  color: var(--text-light);
+  border-right: 1px solid rgba(59, 130, 246, 0.15);
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Details-tr td:last-child {
+  border-right: none;
+}
+
+.Details-thead td {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.Details-tbody td i {
+  font-size: 16px;
+  color: var(--accent-color);
+}
+
+
+@media (min-width: 1024px) {
+  .Details-parent {
+    gap: 24px;
+    padding: 0;
+  }
+
+  .New-Register-Parent {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 16px;
+    flex-direction: row;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 16px;
+    font-size: 13px;
+    flex: 1;
+  }
+
+  .Details-table {
+    font-size: 12px;
+  }
+
+  .Details-tr td {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .Details-thead td {
+    font-size: 12px;
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .Details-parent {
+    gap: 18px;
+  }
+
+  .New-Register-Parent {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .New-Register-Parent i {
+    font-size: 16px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 12px;
+    flex-direction: row;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .Details-table {
+    font-size: 11px;
+  }
+
+  .Details-tr td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .Details-thead td {
+    font-size: 11px;
+    padding: 10px 8px;
+  }
+
+  .Details-tbody td i {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .Details-parent {
+    gap: 14px;
+  }
+
+  .New-Register-Parent {
+    padding: 10px 12px;
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .New-Register-Parent i {
+    font-size: 14px;
+  }
+
+  .New-register-child {
+    font-size: 12px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 12px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  
+  
+  .Details-table {
+    font-size: 9px;
+    border-radius: 6px;
+    
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    overflow-x: auto; 
+  }
+
+  
+  .Details-thead {
+    background: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+
+  .Details-tr {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .Details-tr td {
+    padding: 8px 6px;
+    font-size: 9px;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+    word-break: break-word;
+  }
+
+  .Details-tr td:last-child {
+    border-right: none;
+  }
+
+  .Details-thead td {
+    font-size: 9px;
+    padding: 8px 6px;
+    font-weight: 600;
+    color: var(--accent-color);
+    background: #f9fafb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .Details-tbody td i {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 479px) {
+  .Details-parent {
+    gap: 12px;
+  }
+
+  .New-Register-Parent {
+    padding: 10px;
+    font-size: 11px;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .New-Register-Parent i {
+    font-size: 12px;
+  }
+
+  .New-register-child {
+    font-size: 11px;
+  }
+
+  .Total-Accounts-Parent {
+    gap: 8px;
+    display: flex ;
+    flex-direction: column;
+  }
+
+  .EXpire-Within-3Days,
+  .Account-Expire {
+    padding: 10px;
+    font-size: 11px;
+    width: 100%;
+  }
+
+  
+  
+  .Details-table {
+    font-size: 8px;
+    border-radius: 6px;
+    width: max-content;
+    min-width: 100%;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    overflow-x: auto;
+  }
+
+  .Details-tr {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .Details-tr td {
+    padding: 6px 4px;
+    border: 1px solid #e5e7eb;
+    font-size: 8px;
+    word-break: break-word;
+    text-align: left;
+  }
+
+  .Details-tr td:last-child {
+    border-right: none;
+  }
+
+  .Details-tr td::before {
+    display: none;
+  }
+
+  .Details-thead td {
+    font-size: 8px;
+    padding: 6px 4px;
+    font-weight: 600;
+    color: var(--accent-color);
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .Details-tbody td i {
+    font-size: 10px;
+  }
+}
+
