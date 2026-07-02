@@ -60,6 +60,7 @@ function Nav() {
           </div>
         </div>
       </div>
+      <div className="new">hello hansath</div>
     </div>
     
   )
