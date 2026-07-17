@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  gym-app:
+    build: .
+    container_name: my-gym
+    ports:
+      - "5173:5173"
