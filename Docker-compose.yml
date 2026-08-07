@@ -1,6 +1,64 @@
 services:
-  gym-app:
-    build: .
-    container_name: gym-compose-app
+  mysql:
+    image: mysql:8.0
+    container_name: gym_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-changeme}
+      MYSQL_DATABASE: ${DB_NAME:-member_db}
     ports:
-      - "5173:5173"
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD:-changeme}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - gym_network
+
+  backend:
+    build:
+      context: ./backend
+    container_name: gym_backend
+    restart: unless-stopped
+    environment:
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-changeme}
+      # Inside the Docker network, the backend reaches MySQL by its
+      # service name, not "localhost".
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-member_db}
+      CORS_ORIGINS: http://localhost,http://localhost:5173,http://127.0.0.1:5173
+    ports:
+      - "8000:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - gym_network
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Browser-facing URL - must be a host-reachable address, since
+        # fetch() runs in the user's browser, not inside this container.
+        VITE_API_BASE: http://localhost:8000/api
+    container_name: gym_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - gym_network
+
+networks:
+  gym_network:
+    driver: bridge
+
+volumes:
+  mysql_data:

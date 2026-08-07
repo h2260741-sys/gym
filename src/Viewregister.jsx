@@ -4,10 +4,12 @@ import './Viewregister.css'
 function Viewregister() {
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-    setUsers(storedUsers);
-  }, []);
+ useEffect(() => {
+  fetch("http://localhost:8000/api/users")
+    .then((res) => res.json())
+    .then((data) => setUsers(data))
+    .catch((err) => console.error(err));
+}, []);
 
   // Calculate expired and expiring soon counts
   const calculateStats = () => {
